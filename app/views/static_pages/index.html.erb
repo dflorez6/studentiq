@@ -1,0 +1,8 @@
+<h1>StaticPages#index</h1>
+<p>Find me in app/views/static_pages/index.html.erb</p>
+
+<% if student_signed_in? %>
+  <%= link_to destroy_student_session_path, method: :delete, class: 'nav-link' do %>
+      Log Out
+    <% end %>
+<% end %>

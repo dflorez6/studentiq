@@ -105,7 +105,7 @@ group :development, :test do
   # Debugging
   gem 'better_errors'
   # gem 'debase'
-  gem 'ruby-debug-ide'
+  # gem 'ruby-debug-ide'
   gem 'awesome_print'
 
   # Preview emails in browser

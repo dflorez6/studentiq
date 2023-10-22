@@ -265,9 +265,6 @@ GEM
     timeout (0.4.0)
     tinymce-rails (6.7.1)
       railties (>= 3.1.1)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
@@ -334,7 +331,6 @@ DEPENDENCIES
   simple_calendar (~> 2.4)
   spring
   tinymce-rails
-  turbolinks (~> 5)
   tzinfo-data
   uglifier
   web-console (>= 4.1.0)

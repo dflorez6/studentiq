@@ -1,59 +1,172 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-10 col-lg-10 offset-md-1 offset-lg-1">
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
 
-<p>
-  <strong>Dob:</strong>
-  <%= @student.dob %>
-</p>
+    <div class="student-wrapper">
 
-<p>
-  <strong>Bio:</strong>
-  <%= @student.bio %>
-</p>
+      <!-- TOP INFO -->
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+          <div class="">
+            <%= image_tag 'https://media.licdn.com/dms/image/C5603AQHXGoNCWmJBXQ/profile-displayphoto-shrink_800_800/0/1516444893282?e=1703721600&v=beta&t=NF6bxshRmUG7ethJw1X3TGAuwhmijOut8XuHm-ekYtA', class: "rounded-circle img-fluid" %>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-10 col-lg-10 ">
+          <div class="student-info">
+            <h1>
+              <%= "#{@student.first_name} #{@student.last_name}"  %>
+            </h1>
+            <h2>
+              <%= @student.program %>
+            </h2>
+            <h2>
+              <%= @student.campus %>
+            </h2>
+            <div class="links">
+              <% unless @student.github.blank? %>
+                <%= link_to @student.github, target: "_blank" do %>
+                  <i class="fa-brands fa-github"></i>
+                <% end %>
+              <% end %>
+              <% unless @student.github.blank? %>
+                <%= link_to @student.linkedin, target: "_blank" do %>
+                  <i class="fa-brands fa-linkedin"></i>
+                <% end %>
+              <% end %>
+              <% unless @student.github.blank? %>
+                <%= link_to @student.instagram, target: "_blank" do %>
+                  <i class="fa-brands fa-instagram"></i>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TOP INFO -->
 
-<p>
-  <strong>Program:</strong>
-  <%= @student.program %>
-</p>
+      <div class="row mt-4 mb-5 pb-5">
+        <div class="col-12 sm-12 col-md-6 col-lg-6">
+          <div class="student-bio">
+            <p><%= @student.bio %></p>
+          </div>
+        </div>
+        <div class="col-12 sm-12 col-md-6 col-lg-6">
 
-<p>
-  <strong>Campus:</strong>
-  <%= @student.campus %>
-</p>
+          <div class="container-stats">
+            <div class="stats">
+              <div class="progress">
+                <div
+                  class="progress-bar bg-primary"
+                  role="progressbar"
+                  style="width: 60%"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <span style="font-size: 1.5rem"> JavaScript </span>
+                </div>
+              </div>
+              <div class="progress mt-3">
+                <div
+                  class="progress-bar bg-success"
+                  role="progressbar"
+                  style="width: 80%"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <span style="font-size: 1.5rem"> HTML </span>
+                </div>
+              </div>
+              <div class="progress mt-3">
+                <div
+                  class="progress-bar bg-warning"
+                  role="progressbar"
+                  style="width: 50%"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <span style="font-size: 1.5rem"> CSS </span>
+                </div>
+              </div>
+              <div class="progress mt-3">
+                <div
+                  class="progress-bar bg-danger"
+                  role="progressbar"
+                  style="width: 45%"
+                  aria-valuenow="45"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <span style="font-size: 1.5rem"> C# </span>
+                </div>
+              </div>
+              <div class="progress mt-3">
+                <div
+                  class="progress-bar bg-info"
+                  role="progressbar"
+                  style="width: 70%"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <span style="font-size: 1.5rem"> ASP.NET </span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<p>
-  <strong>Gradutaion year:</strong>
-  <%= @student.gradutaion_year %>
-</p>
 
-<p>
-  <strong>Github:</strong>
-  <%= @student.github %>
-</p>
+        </div>
+      </div>
 
-<p>
-  <strong>Linkedin:</strong>
-  <%= @student.linkedin %>
-</p>
 
-<p>
-  <strong>Instagram:</strong>
-  <%= @student.instagram %>
-</p>
+    </div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @student.website %>
-</p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+  </div>
+</div>
+
+
+
+
+<style>
+    .progress {
+        height: 50px; /* Set the desired height for the progress bars */
+        box-shadow: 1px 5px 30px 1px;
+    }
+    .header-stats {
+        margin: 30px;
+        color: #416ed7;
+        text-shadow: 5px 4px 4px 2px;
+        padding: 20px;
+
+        font-weight: bolder;
+        border-radius: 5px;
+        text-decoration: underline;
+    }
+    .stats {
+        background-color: #416ed7;
+        padding: 50px;
+        border-radius: 5px;
+    }
+
+    .student-info h1 {
+        font-size: 1.75rem;
+        margin: 0;
+    }
+    .student-info h2 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .student-bio p {
+        white-space: pre-line;
+    }
+</style>
+
+<%#= link_to 'Edit', edit_student_path(@student) %>
+<%#= link_to 'Back', students_path %>

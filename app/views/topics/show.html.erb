@@ -1,0 +1,195 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-12">
+
+    <!-- TOP INFO --->
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-2 col-lg-2 offset-md-2 offset-lg-2">
+        <ul class="resources-ul">
+          <li>
+            <%= link_to '', class: ""  do %>
+              Articles
+              <span class="badge text-bg-secondary">4</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '', class: ""  do %>
+              Podcasts
+              <span class="badge text-bg-secondary">1</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '', class: ""  do %>
+              Repos
+              <span class="badge text-bg-secondary">2</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '', class: ""  do %>
+              Videos
+              <span class="badge text-bg-secondary">10</span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+            <% unless  @topic.image.blank? %>
+              <%= image_tag @topic.image, class: "img-fluid" %>
+            <% end %>
+          </div>
+          <div class="col-12 col-sm-12 col-md-9 col-lg-9">
+            <h1><%= @topic.name %></h1>
+            <h6><%= @topic.topic_category.name %></h6>
+            <span>
+              <%= link_to '#dev', '' %>
+              <%= link_to '#front-end', '' %>
+              <%= link_to '#es6', '' %>
+            </span>
+            <p>
+              <%= @topic.intro %>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- ./TOP INFO  -->
+
+    <!-- Comments -->
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 offset-md-2 offset-lg-2">
+
+        <div class="comments-wrapper">
+          <!-- Comment -->
+          <div class="comment-wrapper">
+            <div class="comment-content">
+              <div class="comment-image">
+                <%= image_tag 'https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', class: "rounded-circle img-fluid" %>
+              </div>
+              <div class="comment-text">
+                <p>
+                  What is the difference between callbacks, promises, and async/await?
+                </p>
+              </div>
+            </div>
+
+            <div class="comment-actions">
+              <%= link_to '', class: "" do %>
+                1
+                <i class="fa-solid fa-thumbs-up"></i>
+              <% end %>
+              <%= link_to '', class: "" do %>
+                0
+                <i class="fa-solid fa-comment"></i>
+              <% end %>
+            </div>
+          </div>
+          <!-- Comment -->
+
+
+          <!-- Comment -->
+          <div class="comment-wrapper">
+            <div class="comment-content">
+              <div class="comment-image">
+                <%= image_tag 'https://images.pexels.com/photos/4445705/pexels-photo-4445705.jpeg?auto=compress&cs=tinysrgb&w=800', class: "rounded-circle img-fluid" %>
+              </div>
+              <div class="comment-text">
+                <p>
+                  What are the common authentication methods for a front-end/back-end connection?
+                </p>
+              </div>
+            </div>
+
+            <div class="comment-actions">
+              <%= link_to '', class: "" do %>
+                15
+                <i class="fa-solid fa-thumbs-up"></i>
+              <% end %>
+              <%= link_to '', class: "" do %>
+                4
+                <i class="fa-solid fa-comment"></i>
+              <% end %>
+
+
+
+            </div>
+          </div>
+          <!-- Comment -->
+        </div>
+
+      </div>
+    </div>
+    <!-- ./Comments -->
+
+  </div>
+</div>
+
+<% unless student_signed_in? %>
+  <%= link_to 'Edit', edit_topic_path(@topic) %> |
+  <%= link_to 'Back', topics_path %>
+<% end %>
+
+
+<style>
+    .resources-ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .resources-ul ul {
+
+    }
+
+    .resources-ul ul a {
+
+    }
+
+    .badge {
+        background: #343a40;
+        color: white;
+    }
+
+    .comments-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0 0;
+    }
+
+    .comment-wrapper {
+        margin: 0 0 1rem;
+    }
+
+    .comment-content {
+        align-items: center;
+        background: #EDEDF4;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 0.25rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .comment-image {
+        margin-right: 2rem;
+        width: 10%;
+    }
+
+    .comment-image img {
+        width: 100%;
+    }
+
+    .comment-text {
+        flex-grow: 1;
+    }
+
+    .comment-text p {
+
+    }
+
+    .comment-actions {
+        text-align: right;
+    }
+</style>
